@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusBuddy AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">🎓</div>
+                <div>
+                    <h2>CampusBuddy</h2>
+                    <span>AI Study Companion</span>
+                </div>
+            </div>
+
+            <nav>
+                <button class="nav-item active" onclick="showPage('dashboard', this)">
+                    🏠 <span>Dashboard</span>
+                </button>
+
+                <button class="nav-item" onclick="showPage('tutor', this)">
+                    🤖 <span>AI Tutor</span>
+                </button>
+
+                <button class="nav-item" onclick="showPage('notes', this)">
+                    📚 <span>Notes</span>
+                </button>
+
+                <button class="nav-item" onclick="showPage('quiz', this)">
+                    🧠 <span>Quiz</span>
+                </button>
+
+                <button class="nav-item" onclick="showPage('planner', this)">
+                    📅 <span>Study Planner</span>
+                </button>
+
+                <button class="nav-item" onclick="showPage('tasks', this)">
+                    📝 <span>Tasks</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="friend-card">
+                    <div class="friend-icon">💡</div>
+                    <div>
+                        <strong>Study Tip</strong>
+                        <p>Small progress every day creates big results.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Header -->
+            <header class="header">
+                <div>
+                    <p class="small-text">Your personal study space</p>
+                    <h1>CampusBuddy AI</h1>
+                </div>
+
+                <div class="profile">
+                    <div class="notification">🔔</div>
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong>Akshay</strong>
+                        <small>Student</small>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- DASHBOARD -->
+            <section id="dashboard" class="page active-page">
+
+                <div class="welcome">
+                    <div>
+                        <span class="badge">✨ AI Powered</span>
+                        <h2>Good evening, Akshay 👋</h2>
+                        <p>Ready to make today's study session productive?</p>
+                    </div>
+
+                    <button class="primary-btn" onclick="showPage('tutor')">
+                        Ask AI Tutor →
+                    </button>
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">📚</div>
+                        <div>
+                            <span>Study Hours</span>
+                            <strong>18.5h</strong>
+                            <small>↑ 12% this week</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">✅</div>
+                        <div>
+                            <span>Tasks Done</span>
+                            <strong id="taskCount">8</strong>
+                            <small>Great progress!</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">🧠</div>
+                        <div>
+                            <span>Quiz Score</span>
+                            <strong>82%</strong>
+                            <small>↑ 8% this week</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">🔥</div>
+                        <div>
+                            <span>Study Streak</span>
+                            <strong>7 Days</strong>
+                            <small>Keep going!</small>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="card progress-card">
+                        <div class="card-header">
+                            <div>
+                                <h3>Weekly Progress</h3>
+                                <p>Your study activity this week</p>
+                            </div>
+                            <span>78%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+
+                        <div class="week">
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span>Sun</span>
+                        </div>
+                    </div>
+
+
+                    <div class="card deadline-card">
+                        <div class="card-header">
+                            <div>
+                                <h3>Upcoming Tasks</h3>
+                                <p>Don't miss your deadlines</p>
+                            </div>
+                            <button class="link-btn" onclick="showPage('tasks')">View all</button>
+                        </div>
+
+                        <div class="task-row">
+                            <span class="task-dot red"></span>
+                            <div>
+                                <strong>DBMS Assignment</strong>
+                                <small>Due Today</small>
+                            </div>
+                            <span class="urgent">Urgent</span>
+                        </div>
+
+                        <div class="task-row">
+                            <span class="task-dot yellow"></span>
+                            <div>
+                                <strong>C Programming Quiz</strong>
+                                <small>Tomorrow</small>
+                            </div>
+                            <span class="medium">Soon</span>
+                        </div>
+
+                        <div class="task-row">
+                            <span class="task-dot green"></span>
+                            <div>
+                                <strong>Mathematics Revision</strong>
+                                <small>Friday</small>
+                            </div>
+                            <span class="normal">Planned</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-section">
+                    <h3>Quick Actions</h3>
+
+                    <div class="quick-grid">
+
+                        <button onclick="showPage('tutor')">
+                            <span>🤖</span>
+                            <strong>Ask AI Tutor</strong>
+                            <small>Get instant explanations</small>
+                        </button>
+
+                        <button onclick="showPage('notes')">
+                            <span>📄</span>
+                            <strong>Summarize Notes</strong>
+                            <small>Turn notes into revision points</small>
+                        </button>
+
+                        <button onclick="showPage('quiz')">
+                            <span>🧠</span>
+                            <strong>Take a Quiz</strong>
+                            <small>Test your knowledge</small>
+                        </button>
+
+                        <button onclick="showPage('planner')">
+                            <span>📅</span>
+                            <strong>Study Planner</strong>
+                            <small>Create your study plan</small>
+                        </button>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- AI TUTOR -->
+            <section id="tutor" class="page">
+
+                <div class="page-title">
+                    <span class="badge">🤖 AI Tutor</span>
+                    <h2>Ask anything about your studies</h2>
+                    <p>Your friendly AI tutor explains difficult topics in simple language.</p>
+                </div>
+
+                <div class="tutor-container">
+
+                    <div id="chatBox" class="chat-box">
+
+                        <div class="message ai">
+                            <div class="message-avatar">🤖</div>
+                            <div>
+                                <strong>CampusBuddy AI</strong>
+                                <p>
+                                    Hi Akshay! 👋 Ask me about programming,
+                                    mathematics, cloud computing, databases or any
+                                    college topic.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="suggestions">
+                        <button onclick="askSuggestion('Explain cloud computing simply')">
+                            Explain Cloud Computing
+                        </button>
+
+                        <button onclick="askSuggestion('What is an algorithm?')">
+                            What is an Algorithm?
+                        </button>
+
+                        <button onclick="askSuggestion('Explain eigenvalues')">
+                            Explain Eigenvalues
+                        </button>
+                    </div>
+
+                    <div class="chat-input">
+                        <input id="questionInput" type="text" placeholder="Ask your study question..."
+                            onkeydown="handleEnter(event)">
+
+                        <button onclick="askAI()">Send ➤</button>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTES -->
+            <section id="notes" class="page">
+
+                <div class="page-title">
+                    <span class="badge">📚 Smart Notes</span>
+                    <h2>Turn notes into simple revision material</h2>
+                    <p>Paste your notes and CampusBuddy will create a quick summary.</p>
+                </div>
+
+                <div class="notes-grid">
+
+                    <div class="card">
+                        <h3>📝 Your Notes</h3>
+
+                        <textarea id="notesInput" placeholder="Paste your notes here...
+
+Example:
+Cloud computing is the delivery of computing services over the internet..."></textarea>
+
+                        <button class="primary-btn full" onclick="summarizeNotes()">
+                            ✨ Summarize Notes
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <h3>✨ AI Summary</h3>
+
+                        <div id="summaryOutput" class="output">
+                            <div class="empty-state">
+                                <span>🧠</span>
+                                <p>Your summary will appear here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUIZ -->
+            <section id="quiz" class="page">
+
+                <div class="page-title">
+                    <span class="badge">🧠 Quiz Generator</span>
+                    <h2>Test your knowledge</h2>
+                    <p>Choose a subject and generate a practice quiz.</p>
+                </div>
+
+                <div class="card quiz-card">
+
+                    <label>Select Subject</label>
+
+                    <select id="subjectSelect">
+                        <option value="c">C Programming</option>
+                        <option value="cloud">Cloud Computing</option>
+                        <option value="math">Mathematics</option>
+                        <option value="dbms">DBMS</option>
+                    </select>
+
+                    <button class="primary-btn" onclick="startQuiz()">
+                        Generate Quiz 🚀
+                    </button>
+
+                    <div id="quizArea"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PLANNER -->
+            <section id="planner" class="page">
+
+                <div class="page-title">
+                    <span class="badge">📅 Study Planner</span>
+                    <h2>Create your study plan</h2>
+                    <p>Build a simple daily study schedule.</p>
+                </div>
+
+                <div class="card planner-card">
+
+                    <div class="form-grid">
+
+                        <div>
+                            <label>Subject</label>
+                            <input id="planSubject" type="text" placeholder="e.g. Data Structures">
+                        </div>
+
+                        <div>
+                            <label>Exam Date</label>
+                            <input id="examDate" type="date">
+                        </div>
+
+                        <div>
+                            <label>Hours Per Day</label>
+                            <input id="studyHours" type="number" min="1" max="12" value="2">
+                        </div>
+
+                    </div>
+
+                    <button class="primary-btn" onclick="createPlan()">
+                        Create Study Plan ✨
+                    </button>
+
+                    <div id="planOutput"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TASKS -->
+            <section id="tasks" class="page">
+
+                <div class="page-title">
+                    <span class="badge">📝 Task Manager</span>
+                    <h2>Manage your college tasks</h2>
+                    <p>Keep assignments and deadlines organized.</p>
+                </div>
+
+                <div class="card">
+
+                    <div class="add-task">
+                        <input id="taskInput" type="text" placeholder="Add a new task...">
+                        <button class="primary-btn" onclick="addTask()">+ Add Task</button>
+                    </div>
+
+                    <div id="taskList">
+
+                        <div class="my-task">
+                            <input type="checkbox" onchange="completeTask(this)">
+                            <span>Complete DBMS Assignment</span>
+                            <button onclick="deleteTask(this)">×</button>
+                        </div>
+
+                        <div class="my-task">
+                            <input type="checkbox" onchange="completeTask(this)">
+                            <span>Practice C Programming</span>
+                            <button onclick="deleteTask(this)">×</button>
+                        </div>
+
+                        <div class="my-task">
+                            <input type="checkbox" onchange="completeTask(this)">
+                            <span>Revise Mathematics</span>
+                            <button onclick="deleteTask(this)">×</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
